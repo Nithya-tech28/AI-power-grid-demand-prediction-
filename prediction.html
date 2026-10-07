@@ -1,0 +1,309 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Power Grid - Prediction</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        ⚡ AI Power Grid
+    </div>
+
+    <div class="nav-links">
+
+        <a href="../index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="prediction.html">Prediction</a>
+        <a href="analysis.html">Analysis</a>
+        <a href="history.html">History</a>
+
+    </div>
+
+</nav>
+
+
+<section class="page-header">
+
+    <p class="small-title">
+        ARTIFICIAL INTELLIGENCE
+    </p>
+
+    <h1>
+        ⚡ Power Demand Prediction
+    </h1>
+
+    <p>
+        Enter the required information to predict power demand.
+    </p>
+
+</section>
+
+
+<main class="prediction-page">
+
+    <section class="prediction-card">
+
+        <div class="prediction-title">
+
+            <div class="prediction-icon">
+                🔮
+            </div>
+
+            <div>
+
+                <h2>
+                    AI Demand Predictor
+                </h2>
+
+                <p>
+                    Enter power grid information
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>🌡️ Temperature (°C)</label>
+
+            <input
+                type="number"
+                id="temperature"
+                placeholder="Example: 32">
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>💧 Humidity (%)</label>
+
+            <input
+                type="number"
+                id="humidity"
+                placeholder="Example: 65">
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>🌬️ Wind Speed (km/h)</label>
+
+            <input
+                type="number"
+                id="wind"
+                placeholder="Example: 12">
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>☀️ Solar Generation (MW)</label>
+
+            <input
+                type="number"
+                id="solar"
+                placeholder="Example: 180">
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>⚡ Previous Power Demand (MW)</label>
+
+            <input
+                type="number"
+                id="previousDemand"
+                placeholder="Example: 250">
+
+        </div>
+
+
+        <div class="prediction-buttons">
+
+            <button
+                type="button"
+                class="predict-btn"
+                id="predictButton">
+
+                🔮 Predict Power Demand
+
+            </button>
+
+
+            <button
+                type="button"
+                class="sample-btn"
+                id="sampleButton">
+
+                ⚡ Load Sample Data
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="result"
+            class="result-box">
+
+            ⚡ Waiting for prediction...
+
+        </div>
+
+    </section>
+
+
+    <section class="prediction-info">
+
+        <div class="info-box">
+
+            <span>⚡ Current Demand</span>
+
+            <strong id="currentDemand">
+                --
+            </strong>
+
+            <small>MW</small>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <span>🔮 Predicted Demand</span>
+
+            <strong id="predictedDemand">
+                --
+            </strong>
+
+            <small>MW</small>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <span>🔋 Grid Status</span>
+
+            <strong id="gridStatus">
+                Waiting
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <section class="prediction-chart">
+
+        <div class="chart-heading">
+
+            <p class="small-title">
+                AI MONITORING
+            </p>
+
+            <h2>
+                📊 Power Demand History
+            </h2>
+
+        </div>
+
+        <div class="chart-container">
+
+            <canvas id="demandChart"></canvas>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 AI-Based Power Grid Demand Prediction Platform
+    </p>
+
+</footer>
+
+
+<!-- Chart.js -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+
+<!-- Main JavaScript -->
+
+<script src="../js/script.js"></script>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const predictButton =
+        document.getElementById("predictButton");
+
+    const sampleButton =
+        document.getElementById("sampleButton");
+
+
+    // Predict button
+
+    predictButton.addEventListener(
+        "click",
+        function () {
+
+            predictDemand();
+
+        }
+    );
+
+
+    // Sample data button
+
+    sampleButton.addEventListener(
+        "click",
+        function () {
+
+            document.getElementById("temperature").value = 32;
+
+            document.getElementById("humidity").value = 65;
+
+            document.getElementById("wind").value = 12;
+
+            document.getElementById("solar").value = 180;
+
+            document.getElementById("previousDemand").value = 250;
+
+        }
+    );
+
+});
+
+</script>
+
+</body>
+
+</html>
+```
